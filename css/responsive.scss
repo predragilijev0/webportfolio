@@ -1,0 +1,146 @@
+@media screen and (max-width: 1040px) {
+    body {
+        #navigation {
+            width: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            z-index: 10;
+            border-radius: 0px;
+            justify-content: center;
+            flex-direction: row;
+            align-items: center;
+            #logo {
+                margin-top: 0px;
+            }
+            ul {
+                display: flex;
+                flex-direction: row;
+                // align-items: center;
+                li {
+                    margin-top: 0px;
+                    margin-left: 6px;
+                    &:last-child {
+                        margin-bottom: 0px;
+                    }
+                }
+            }
+        }
+        #profile {
+            margin-top: 90px;
+        }
+    }
+}
+
+@media screen and (max-width: 860px) {
+    body {
+        #profile {
+            width: 100%;
+            border-radius: 0px;
+            margin-top: 60px;
+        }
+        #skills, #projects, #contact, #footer {
+            width: 100%;
+            border-radius: 0px;
+        }
+    }
+}
+
+@media screen and (max-width: 750px) {
+    body {
+        .prof {
+            flex-direction: column;
+            justify-content: center;
+            #profilepic {
+                margin-top: 30px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                h3 {
+                    margin-top: 5px;
+                }
+            }
+            #about {
+                margin-top: 30px;
+            }
+        }
+        #skills {
+            .skilltypes {
+                .type {
+                    flex: 0 0 47%;
+                }
+            }
+        }
+        #projects {
+            #projectlist {
+                .type {
+                    flex: 0 0 97%;
+                    margin-top: 16px;
+                }
+            }
+        }
+        #footer {
+            margin-bottom: 0px;
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    body {
+        footer {
+            ul {
+                flex-direction: column;
+                align-items: center;
+                li {
+                    margin-top: 5px;
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        #skills {
+            .skilltypes {
+                .type {
+                    flex: 0 0 97%;
+                }
+            }
+        }
+        #contactinfo {
+            width: 300px;
+            .infopart {
+                width: auto;
+            }
+        }
+        form {
+            margin-top: 10px;
+            input {
+                width: 300px;
+                height: 50px;
+            }
+            textarea {
+                width: 300px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 360px) {
+    body {
+        #contactinfo {
+            width: auto;
+        }
+        #profile {
+            height: 100vh;
+        }
+        .prof {
+            
+            #about {
+                border-radius: 0px;
+            }
+        }
+    }
+}

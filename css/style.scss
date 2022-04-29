@@ -1,0 +1,454 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+$bojaGlPozadine:rgb(233, 233, 233);
+$bojaHover:#ffa600;
+$white: #ffffff;
+$black: #000000;
+$gray: #575757;
+
+$navGray: #a5a5a5;
+
+$pix8: 8px;
+$pix12: 12px;
+$pix20: 20px;
+$pix30: 30px;
+
+* {
+    padding: 0px;
+    margin: 0px;
+    scroll-behavior: smooth;
+}
+
+@mixin borderRadius20 {
+    border-radius: $pix20;
+}
+
+@mixin boxShadowFar {
+    box-shadow: 0px 8px 24px #7090b04d;
+    -moz-box-shadow: 0px 8px 24px #7090b04d;
+    -webkit-box-shadow: 0px 8px 24px #7090b04d;
+}
+
+@mixin boxShadowInset {
+    box-shadow: inset 0px 0px 20px #46596b4d;
+    -moz-box-shadow: inset 0px 0px 20px #46596b4d;
+    -webkit-box-shadow: inset 0px 0px 20px #46596b4d;
+}
+
+@mixin boxShadowInsetDark {
+    box-shadow: inset 0px 0px 20px #00000069;
+    -moz-box-shadow: inset 0px 0px 20px #00000069;
+    -webkit-box-shadow: inset 0px 0px 20px #00000069;
+}
+
+@mixin stilDelova {
+    background-color: $white;
+    width: 800px;
+    margin: 0px auto;
+    border-radius: $pix20;
+    // margin-top: $pix30;
+    @include boxShadowFar;
+    
+}
+
+@mixin blurIspod {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
+}
+
+@mixin pozadinaGradient {
+    background: linear-gradient(to bottom, rgba(201, 230, 255, 0.19) 100px, #ffffff 1200px);
+}
+
+@mixin svetliGradient {
+    background: #EFEFBB;
+    background: -webkit-linear-gradient(to right, #D4D3DD, #EFEFBB);
+    background: linear-gradient(to right, #D4D3DD, #EFEFBB);
+}
+
+@mixin beliGradient {
+    background: rgb(235,235,255);
+    background: linear-gradient(320deg, rgba(235,235,255,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+@mixin siviGradient {
+    background: rgb(218, 218, 255);
+    background: linear-gradient(320deg, rgb(244, 244, 244) 0%, rgba(233,233,233,1) 100%);
+}
+
+@mixin transitionFade {
+    -webkit-transition:.4s ease-out;
+    transition:.4s ease-out;
+}
+
+body {
+    background-color: $bojaGlPozadine;
+    color: $black;
+    position: relative;
+    font-family: 'Ubuntu', sans-serif;
+    ul {
+        list-style-type: none;
+    }
+    a {
+        text-decoration: none;
+        color: $gray;
+        &:hover {
+            color: $bojaHover;
+            @include transitionFade;
+        }
+    }
+    .contacts {
+        color: $white;
+        &:hover {
+            color: $bojaGlPozadine;
+            @include transitionFade;
+        }
+    }
+
+    
+    #navigation {
+        width: 70px;
+        background-color: rgb(255, 255, 255);
+        @include beliGradient;
+        position: fixed;
+        top: $pix30;
+        left: $pix30;
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        
+        @include borderRadius20;
+        @include boxShadowFar;
+        #logo {
+            margin-top: 20px;
+        }
+        ul {
+            li {
+                padding: 10px;
+                margin-top: $pix30;
+                &:last-child {
+                    margin-bottom: 20px;
+                    background-color: $bojaHover;
+                    border-radius: 50%;
+                    &:hover {
+                        @include transitionFade;
+                        color: $gray;
+                        box-shadow: 0px 0px 10px rgba(255, 115, 0, 0.692);
+                    }
+                }
+            }
+        }
+    }
+    
+    #profile, #skills, #projects, #contact {
+        @include stilDelova;
+        margin-top: $pix30;
+        h2 {
+            // color: $white;
+            border-left: 3px solid $bojaHover;
+            @include borderRadius20;
+            padding-left: $pix12;
+            font-size: 1.4rem;
+        }
+        @include beliGradient;
+    }
+    #profile {
+        background-image: url('../img/bg10.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .prof {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        #profilepic {
+            img {
+                width: 140px;
+                height: 140px;
+                border-radius: 50%;
+                box-shadow: 0px 6px 8px #0000004d;
+                border: 4px solid rgba(255, 153, 0, 0.144);
+                @include blurIspod;
+            }
+            h1 {
+                margin-top: $pix8;
+                color: $white;
+            }
+        }
+        #about {
+            background-color: rgba(0, 0, 0, 0);
+            padding: 10px 15px 10px 15px;
+            @include blurIspod;
+            border: 1px solid rgba(252, 252, 252, 0.123);
+            box-shadow: 0px 4px 16px #070707cb;
+            @include borderRadius20;
+            h2, p, ul {
+                padding: 5px 15px 5px 15px;
+            }
+            h2 {
+                color: rgb(255, 255, 255);
+                border: none;
+            }
+            p {
+                color: rgb(185, 185, 185);
+                text-shadow: 0px 2px 3px $black;
+            }
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: 10px;
+                margin-bottom: 5px;
+                li {
+                    margin-right: 14px;
+                    a {
+                        color: $white;
+                        &:hover {
+                            color: $bojaHover;
+                            @include transitionFade;
+                        }
+                    }
+                }
+                
+            }
+            
+        }
+        
+        h3 {
+            color: $bojaHover;
+        }
+        p {
+            margin-top: $pix8;
+            width: 300px;
+            font-size: 1.1rem;
+            color: $gray;
+        }
+    }
+
+    #projects {
+        #projectlist{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: $pix12;
+            justify-content: center;
+            .type {
+                width: 100%;
+                margin: 1%;
+                border-radius: 16px;
+                -webkit-box-flex: 0;
+                flex: 0 0 47%;
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                flex-direction: column;
+                box-shadow: 0px 4px 10px #7090b04d;
+                background: $white;
+                img {
+                    width: 100%;
+                    border-radius: 16px 16px 0 0;
+                }
+                .projtext {
+                    padding: 20px;
+                    p {
+                        margin-top: $pix8;
+                    }
+                    .techused {
+                        display: inline-flex;
+                        flex-wrap: wrap;
+                        .tech {
+                            display: flex;
+                            margin-right: 8px;
+                            box-shadow: 0px 4px 12px #7090b04d;
+                            color: rgb(48, 48, 48);;
+                            border-left: 3px solid $bojaHover;
+                            border-right: 3px solid $bojaHover;
+                            padding: 8px;
+                            border-radius: 15px;
+                            margin-top: $pix12;
+                            &:hover {
+                                background-color: $bojaHover;
+                                @include transitionFade;
+                                color: $white;
+                            }
+                            i {
+                                margin-right: 5px;
+                            }
+                            h4 {
+                                font-size: 0.8rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #skills {
+        .skillgroup {
+            margin-top: 16px;
+            font-size: 1rem;
+        }
+        .skilltypes {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: $pix12;
+            .type {
+                margin: 1%;
+                border-radius: 16px;
+                -webkit-box-flex: 0;
+                flex: 0 0 30.3%;
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                box-shadow: 0px 4px 10px #7090b04d;
+                background: $white;
+                &:hover {
+                    @include transitionFade;
+                    background-color: rgb(207, 207, 207);
+                    
+                    i {
+                        @include transitionFade;
+                        background-color: $black;                    
+                    }
+                }
+                i {
+                    width: 70px;
+                    color: $white;
+                    padding: 8px 0px 8px 20px;
+                    background-color: $bojaHover;
+                    border-radius: 16px 0 0 16px;
+                }
+                h3 {
+                    padding: 13px;
+                    font-size: 1rem;
+                    width: 100%;
+                    border-radius: 0 16px 16px 0;
+                    
+                }
+            }
+        }
+    }
+
+    .padd {
+        padding: 1.3rem;
+    }
+    #contactinfo {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 400px;
+        margin: 0 auto;
+        border-top: 2px solid $bojaHover;
+        border-bottom: 2px solid $bojaHover;
+        border-radius: 6px;
+        box-shadow: 0px 4px 10px #7090b04d;
+        // background-color: $white;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        
+        .infopart {
+            width: 390px;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            padding-left: 5px;
+            padding-right: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    form {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+        input {
+            font-size: 1em;
+            width: 400px;
+            box-sizing: border-box;
+            height: 55px;
+            padding: 0 15px 0 15px;
+            background-color: $white;
+            border-radius: 30px;
+            outline: 0;
+            color: $gray;
+            border: 0;
+            margin-top: $pix12;
+            box-shadow: 0px 4px 10px #7090b04d;
+            font-family: 'Ubuntu', sans-serif;
+            &:focus {
+                background-color: $black;
+                @include transitionFade;
+            }
+        }
+        
+        textarea {
+            width: 400px;
+            box-sizing: border-box;
+            height: 110px;
+            resize: none;
+            padding: 10px 15px 0 15px;
+            outline: 0;
+            border-radius: 20px;
+            background-color: $white;
+            color: $gray;
+            border: 0;
+            font-size: 1em;
+            margin-top: $pix12;
+            box-shadow: 0px 4px 12px #7090b04d;
+            font-family: 'Ubuntu', sans-serif;
+            &:focus {
+                background-color: $black;
+                @include transitionFade;
+            }
+        }
+
+        #submit {
+            border-top: none;
+            cursor: pointer;
+            color: $white;
+            background-color: $bojaHover;
+            box-shadow: 0px 4px 10px #805a149f;
+            font-size: 1.1em;
+            &:hover {
+                background-color: $black;
+                @include transitionFade;   
+            }
+        }
+        
+    }
+    footer {
+        @include stilDelova;
+        margin-top: $pix30;
+        h2 {
+            border-left: 3px solid $bojaHover;
+            padding-left: $pix12;
+            @include borderRadius20;
+        }
+        a {
+            font-weight: bold;
+        }
+        margin-bottom: $pix30;
+        @include beliGradient;
+        ul {
+            margin-top: $pix8;
+            display: flex;
+            justify-content: space-around;
+            font-size: 1.1rem;
+            li {
+                margin-top: 10px;
+            }
+        }
+        p {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            color: $bojaHover;
+            padding-top: 6px;
+        }
+    }
+    
+}
